@@ -6,7 +6,7 @@ class GildedRose(object):
         self.items = items
 
     def update_quality(self):
-            item = self.items
+        for item in self.items:
             if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
                 if item.quality > 0:
                     if item.name != "Sulfuras, Hand of Ragnaros":
@@ -38,7 +38,7 @@ class GildedRose(object):
                     if item.quality < 50:
                         item.quality = item.quality + 1
                     item.sell_in = item.sell_in - 1
-            return item
+            return self
 
 
 class Item:
